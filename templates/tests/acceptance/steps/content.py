@@ -10,4 +10,10 @@ def step_impl(contex):
 @step('The title tag has content "(.*)"')
 def step_impl(context, content):
     page = BasePage(context.browser)
-    assert page.title.text == content 
+    assert page.title.text == content
+    
+@then('I can see there is a posts section on the page')
+def step_impl(context):
+    page = BlogPage(context.driver)
+    
+    assert page.post_section.is_displayed()
