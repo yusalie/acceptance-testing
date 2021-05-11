@@ -1,7 +1,7 @@
 from behave import *
 from selenium import webdriver
 from tests.acceptance.page_model.home_page import HomePage
-from tests.acceptance.page_model.blog_page import BlogPage 
+from tests.acceptance.page_model.new_post_page import NewPostPage
 
 use_step_matcher('re')
 
@@ -12,10 +12,10 @@ def step_impl(context):
     page = HomePage(context.driver)
     context.driver(page.url)
 
-@then('I am on blog page')
+@then('I am on new post page')
 def step_impl(contex):
     contex.driver = webdriver.Chrome('/Users/Yusuf Salie/Downloads/chromedriver_win32 (1)/chromedriver')
-    page = BlogPage(contex.driver)
+    page = NewPostPage(contex.driver)
     contex.driver.get(page.url)
     
     
