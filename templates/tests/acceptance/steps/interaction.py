@@ -1,6 +1,8 @@
 from behave import *
-from tests.acceptance.page_model.new_post_page import NewPostPage
-from tests.acceptance.page_model.base_page import BasePage
+import sys
+sys.path.append("templates/tests/acceptance/page_model")
+from page_model.new_post_page import NewPostPage
+from page_model.base_page import BasePage
 use_step_matcher('re')
 
 @when('I click on the "(.*)" link')
